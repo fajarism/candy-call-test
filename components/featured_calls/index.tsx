@@ -4,6 +4,8 @@ import Margin from "@/components/dimension/margin";
 import PopularCalls from "@/components/featured_calls/subfeatures/popular_calls/index.ios";
 import Recommendation from "@/components/featured_calls/subfeatures/recommendation/index.ios";
 import TrendingPrimary from "@/components/featured_calls/subfeatures/trending/index.ios";
+import { LinearGradient } from "expo-linear-gradient";
+import { StyleSheet } from "react-native";
 import { StyledView } from "@/components/nativewind";
 
 const FeaturedCalls = () => {
@@ -31,6 +33,10 @@ const FeaturedCalls = () => {
             <FeatureCallTitle />
             <Margin height={24} />
             <StyledView className="bg-[#FFECEC] rounded-[24px] w-[374px] p-2"> 
+                <LinearGradient
+                    start={{ x: 0, y: 0 }}
+                    colors={['#f7998c', '#ffecec', '#ffffff']}
+                    style={styles.background} />
                 <TrendingPrimary data={trendingData}/>
                 <Margin height={21} />
                 <PopularCalls data={popularCallsData} />
@@ -40,7 +46,18 @@ const FeaturedCalls = () => {
             </StyledView>
         </StyledView>
     )
-
 }
+
+const styles = StyleSheet.create({
+    background: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        height: 1500,
+        borderRadius: 24,
+        overflow: 'hidden',
+    },
+});
 
 export default FeaturedCalls;
