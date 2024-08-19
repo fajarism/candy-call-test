@@ -25,7 +25,7 @@ const RecommendationCard = ({title, duration, date, image, isPlaying = false, in
             <StyledImage source={image} className="w-[69px] h-[69px] rounded-[15.33px] text-center self-center" />
             <Margin width={16} />
             <StyledView className="flex flex-col flex-1">
-                <OutfitText numberOfLines={3} fontWeight="regular" className="text-black-1 text-[14px] leading-[21px] flex-1">{title}</OutfitText>
+                <OutfitText numberOfLines={3} fontWeight="regular" className={`${isPlaying ? 'text-primary-red' : 'text-black-1'} text-[14px] leading-[21px] flex-1`}>{title}</OutfitText> 
                 <Margin height={4} />
                 <StyledView className="flex flex-row items-center">
                     <Image source={require("@/assets/images/icon/clock_fill.png")} className="w-[20px] h-[20px] mr-[5.3px] self-center" />

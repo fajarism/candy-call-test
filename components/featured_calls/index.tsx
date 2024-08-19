@@ -2,7 +2,7 @@ import CTA from "@/components/featured_calls/subfeatures/cta";
 import FeatureCallTitle from "@/components/featured_calls/subfeatures/title";
 import Margin from "@/components/dimension/margin";
 import PopularCalls from "@/components/featured_calls/subfeatures/popular_calls/index";
-import Recommendation from "@/components/featured_calls/subfeatures/recommendation/index.ios";
+import Recommendation from "@/components/featured_calls/subfeatures/recommendation/index";
 import TrendingPrimary from "@/components/featured_calls/subfeatures/trending/index";
 import useFeaturedCallsScreenHook from "@/hooks/components/useFeaturedCallsScreenHook";
 import { LinearGradient } from "expo-linear-gradient";
@@ -29,9 +29,22 @@ const FeaturedCalls = () => {
                 <TrendingPrimary data={data.trendingData}/>
                 <Margin height={21} />
                 <PopularCalls data={data.popularCallsData} />
-                <Recommendation data={data.bestForYouData} />
-                <Margin height={49} />
-                <CTA />
+                {
+                    Platform.OS === 'web' ? 
+                        <StyledView className="flex flex-col flex-1">
+                            <Margin height={108.5} />
+                            <StyledView className="flex flex-row gap-[88px] flex-1 items-start">
+                                <Recommendation data={data.bestForYouData} />
+                                <CTA />
+                            </StyledView>
+                        </StyledView>:
+                        <>
+                            <Recommendation data={data.bestForYouData} />
+                            <Margin height={49} />
+                            <CTA />
+                        </>
+                }
+                
             </StyledView>
         </StyledView>
     )
