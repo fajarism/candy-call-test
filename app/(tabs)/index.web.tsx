@@ -1,15 +1,12 @@
 import FeaturedCalls from '@/components/featured_calls';
+import useFeaturedCallsScreenHook from '@/hooks/components/useFeaturedCallsScreenHook';
 import { Image, Platform, SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
 
 export default function HomeScreen() {
+  const data = useFeaturedCallsScreenHook();
   return (
-    // <SafeAreaView className="flex flex-1 items-center bg-background-mobile w-[100vw]">
-    //   <ScrollView className="flex-1" contentContainerStyle={{ paddingBottom: 100 }}>
-    //     <FeaturedCalls />
-    //   </ScrollView>
-    // </SafeAreaView>
     <div className="flex flex-1 bg-background-mobile w-[100vw] overflow-scroll">
-      <FeaturedCalls />
+      <FeaturedCalls data={data} />
     </div>
   );
 }

@@ -1,6 +1,14 @@
+import { BestForYouData } from "@/components/featured_calls/subfeatures/recommendation/types";
+import { PopularCallsData } from "@/components/featured_calls/subfeatures/popular_calls/types";
 import { VerifiedArtistData } from "@/components/featured_calls/subfeatures/trending/components/card/types"
 
-const useFeaturedCallsScreenHook = () => {
+export type FeaturedCallsData = {
+    trendingData: VerifiedArtistData[];
+    popularCallsData: PopularCallsData[];
+    bestForYouData: BestForYouData[];
+}
+
+const useFeaturedCallsScreenHook = (): FeaturedCallsData => {
     const trendingData: VerifiedArtistData[] = [
         {text: "Donald Trump's Secret \nGambling Advice", duration: "01:59", numberOfUsers: "230k"},
         {text: "Persuading Sanam: Ditch \nRamadan, Try Wine!", duration: "01:59", numberOfUsers: "230k"}
@@ -22,11 +30,9 @@ const useFeaturedCallsScreenHook = () => {
     ]
 
     return {
-        data: {
-            trendingData,
-            popularCallsData,
-            bestForYouData,
-        }
+        trendingData,
+        popularCallsData,
+        bestForYouData,
     }
 }
 
