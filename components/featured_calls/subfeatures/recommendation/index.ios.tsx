@@ -1,5 +1,4 @@
 import Margin from "@/components/dimension/margin"
-import PopularCallsCard from "@/components/featured_calls/subfeatures/popular_calls/components/card/index.ios"
 import RecommendationCard from "@/components/featured_calls/subfeatures/recommendation/components/card/index.ios"
 import RecommendationHeader from "@/components/featured_calls/subfeatures/recommendation/components/header"
 import { StyledView } from "@/components/nativewind"

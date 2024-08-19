@@ -3,15 +3,10 @@ import Margin from "@/components/dimension/margin"
 import { Image, Text } from "react-native"
 import { OutfitText } from "@/components/font_text"
 import { StyledView } from "@/components/nativewind"
-
-export type VerifiedArtistProps = {
-    text: string;
-    duration: string;
-    numberOfUsers: string;
-}
+import { VerifiedArtistProps } from "@/components/featured_calls/subfeatures/trending/components/card/types"
 
 const VerifiedArtist = ({text, duration, numberOfUsers}: VerifiedArtistProps) => {
-    return <StyledView className="flex flex-row items-start">
+    return <StyledView className="flex flex-row items-start bg-[#1C1D20] rounded-[18px]">
         <StyledView className="flex flex-col items-start py-[10px] px-[16px]">
             <StyledView className="flex flex-row rounded-[50px] border-[#E12121] border-[1px] px-[6px] py-1">
                 <Image source={require("@/assets/images/app/verified.png")} className="w-[14px] h-[14px] mr-[7px] self-center" />

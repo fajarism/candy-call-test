@@ -3,7 +3,7 @@ import { StyledText } from "@/components/nativewind"
 
 const OutfitText = (props: PropsWithoutRef<any>) => {
     const {fontWeight = "regular"} = props;
-    return <StyledText {...props} style={[{ fontFamily: `Outfit-${fontWeight}` }, props.style]} />
+    return <StyledText {...props} style={[{ fontFamily: `Outfit_${fontWeight}` }, props.style]} />
 }
 
 export { OutfitText }

@@ -3,11 +3,14 @@ import { Image, Platform, SafeAreaView, ScrollView, StyleSheet, Text } from 'rea
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView className="flex flex-1 items-center bg-background-mobile">
-      <ScrollView className="flex-1" contentContainerStyle={{ paddingBottom: 100 }}>
-        <FeaturedCalls />
-      </ScrollView>
-    </SafeAreaView>
+    // <SafeAreaView className="flex flex-1 items-center bg-background-mobile w-[100vw]">
+    //   <ScrollView className="flex-1" contentContainerStyle={{ paddingBottom: 100 }}>
+    //     <FeaturedCalls />
+    //   </ScrollView>
+    // </SafeAreaView>
+    <div className="flex flex-1 bg-background-mobile w-[100vw] overflow-scroll">
+      <FeaturedCalls />
+    </div>
   );
 }
 
